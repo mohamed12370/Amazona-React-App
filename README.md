@@ -34,3 +34,16 @@
 17. Create Prodect Details
     17-1. fetch prodect from backend
     17-2. create 3 columns for image , info and action
+18. Create Loading and Message Copmonent
+    18-1. craete loading component
+    18-2. use spinner component
+    18-3. craete message component
+    18-4. create utils.js to define getError function
+19. Implement Add to card
+    19-1. create react conText
+    19-2. define reducer
+    19-3. create store provider
+    19-4. implement add to card button click handler
+20. complete add to cart
+    20-1. check exist item in the cart
+    20-2. check count stock in backend

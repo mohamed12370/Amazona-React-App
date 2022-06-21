@@ -1,13 +1,13 @@
 import Home from './Components/Home/Home';
-import Nav from './Components/Nav/Nav';
 import { Routes, Route } from 'react-router-dom';
 import Prodect from './Components/Prodect/Prodect';
 import Container from 'react-bootstrap/esm/Container';
+import NavBar from './Components/Nav/Nav';
 
 function App() {
   return (
     <>
-      <Nav />
+      <NavBar />
       <main>
         <Container>
           <Routes>

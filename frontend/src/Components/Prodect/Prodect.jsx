@@ -11,6 +11,10 @@ import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import Rating from '../Rating/Rating';
 import { Badge } from 'react-bootstrap';
+import LoadingBox from '../LoadingBox/LoadingBox';
+import MessageBox from '../MessageBox/MessageBox';
+import { useContext } from 'react';
+import { Store } from '../../ConText/Store';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -48,10 +52,26 @@ export default function Prodect() {
     fecthData();
   }, [slug]);
 
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart } = state;
+  const addToCartHandler = async () => {
+    const existItem = cart.cartItems.find((x) => x._id === prodect._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/prodects/${prodect._id}`);
+    if (data.countInStock < quantity) {
+      window.alert('sorry. product is out of stock');
+      return;
+    }
+    ctxDispatch({
+      type: 'CART_ADD_ITEM',
+      payload: { ...prodect, quantity },
+    });
+  };
+
   return loding ? (
-    <div>Loading....</div>
+    <LoadingBox />
   ) : error ? (
-    <div>{error}</div>
+    <MessageBox variant="danger"> {error} </MessageBox>
   ) : (
     <div>
       <Row>
@@ -109,7 +129,10 @@ export default function Prodect() {
                   {prodect.countInStock > 0 && (
                     <ListGroup.Item>
                       <div className="d-grid">
-                        <Button variant="primary"> Add To Card</Button>
+                        <Button onClick={addToCartHandler} variant="primary">
+                          {' '}
+                          Add To Card
+                        </Button>
                       </div>
                     </ListGroup.Item>
                   )}
