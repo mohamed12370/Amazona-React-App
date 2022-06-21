@@ -1,5 +1,2 @@
 const prodectsRouter = require('./Prodects/Prodects');
-
-module.exports = {
-    prodectsRouter,
-};
+module.exports = prodectsRouter;

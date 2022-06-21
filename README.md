@@ -27,3 +27,10 @@
 15. Add botstrap
     15-1. npm i react-bootstrap bootstrap
     15-2. update App.js
+16. Create prodect and Rating componet
+    16-1. crate reting component
+    16-2. create prodect component
+    16-3. use rating comonent in prodect component
+17. Create Prodect Details
+    17-1. fetch prodect from backend
+    17-2. create 3 columns for image , info and action

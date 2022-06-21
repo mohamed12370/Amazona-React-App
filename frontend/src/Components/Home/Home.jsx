@@ -2,7 +2,11 @@ import React from 'react';
 import { useEffect, useState, useReducer } from 'react';
 import logger from 'use-reducer-logger';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import MyProdect from '../MyProdect/MyProdect';
+import { Helmet } from 'react-helmet-async';
 //import data from '../../data';
 
 const reducer = (state, action) => {
@@ -40,6 +44,9 @@ export default function Home() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Amazona</title>
+      </Helmet>
       <h1>Featured Prodects</h1>
       <div className="prodects">
         {loding ? (
@@ -47,24 +54,15 @@ export default function Home() {
         ) : error ? (
           <div>{error}</div>
         ) : (
-          prodects.map((prodect) => {
-            return (
-              <div className="prodect" key={prodect.slug}>
-                <Link to={`/prodect/${prodect.slug}`}>
-                  <img src={prodect.image} alt={prodect.name} />
-                </Link>
-                <div className="prodect-info">
-                  <Link to={`/prodect/${prodect.slug}/`}>
-                    <p> {prodect.name} </p>
-                  </Link>
-                  <p>
-                    <strong>$ {prodect.price}</strong>
-                  </p>
-                  <button>Add to card</button>
-                </div>
-              </div>
-            );
-          })
+          <Row>
+            {prodects.map((prodect) => {
+              return (
+                <Col sm={6} md={4} lg={3} className="mb-3">
+                  <MyProdect key={prodect.slug} prodect={prodect}></MyProdect>
+                </Col>
+              );
+            })}
+          </Row>
         )}
       </div>
     </>
