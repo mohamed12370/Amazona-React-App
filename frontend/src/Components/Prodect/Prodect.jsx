@@ -8,7 +8,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Helmet } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Rating from '../Rating/Rating';
 import { Badge } from 'react-bootstrap';
 import LoadingBox from '../LoadingBox/LoadingBox';
@@ -38,6 +38,7 @@ export default function Prodect() {
 
   let param = useParams();
   let { slug } = param;
+  let navigate = useNavigate();
 
   useEffect(() => {
     const fecthData = async () => {
@@ -54,6 +55,7 @@ export default function Prodect() {
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart } = state;
+
   const addToCartHandler = async () => {
     const existItem = cart.cartItems.find((x) => x._id === prodect._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
@@ -66,6 +68,7 @@ export default function Prodect() {
       type: 'CART_ADD_ITEM',
       payload: { ...prodect, quantity },
     });
+    navigate('/cart');
   };
 
   return loding ? (

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Prodect from './Components/Prodect/Prodect';
 import Container from 'react-bootstrap/esm/Container';
 import NavBar from './Components/Nav/Nav';
+import Cart from './Components/Cart/Cart';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Container>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/prodect/:slug" element={<Prodect />} />
           </Routes>
         </Container>
