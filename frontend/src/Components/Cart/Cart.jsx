@@ -36,7 +36,7 @@ export default function Cart() {
   };
 
   const checkoutHanbler = () => {
-    navigate('/singin?/redirect=/sing');
+    navigate('/signin?/redirect=/sign');
   };
 
   return (

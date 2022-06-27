@@ -36,8 +36,8 @@ export default function Home() {
     const fecthData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const result = await axios.get('/api/prodects');
-        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+        const result = await axios.get('/api/products');
+        dispatch({ type: 'FETCH_SUCCESS', payload: result.data.products });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }

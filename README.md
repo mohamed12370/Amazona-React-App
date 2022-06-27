@@ -55,3 +55,18 @@
     22-1. Click handler to inc/dec item
     22-2. Click handler to Remove item
     22-3. Click handler to Checkout
+23. create Signin Screen
+    23-1. create signin form
+    23-2. add email and password
+    23-3. add signin button
+24. Connect to MongoDB database
+    24-1. create atlas mongoDB database
+    24-2. install local mongoDB database
+    24-3. npm i mongoose
+    24-4. connect to mongoDB database
+25. Seed Sample Data
+    25-1. create prodect model
+    25-2. create user model
+    25-3. create seed route
+    25-4. use route in Server.js
+    25-5. seed sample prodect

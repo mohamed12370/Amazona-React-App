@@ -4,6 +4,7 @@ import Prodect from './Components/Prodect/Prodect';
 import Container from 'react-bootstrap/esm/Container';
 import NavBar from './Components/Nav/Nav';
 import Cart from './Components/Cart/Cart';
+import Signin from './Components/Signin/Signin';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/signin" element={<Signin />} />
             <Route path="/prodect/:slug" element={<Prodect />} />
           </Routes>
         </Container>
