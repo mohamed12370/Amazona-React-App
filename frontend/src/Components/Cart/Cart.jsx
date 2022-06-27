@@ -14,6 +14,7 @@ import axios from 'axios';
 export default function Cart() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
+    userInfo,
     cart: { cartItems },
   } = state;
 
@@ -36,7 +37,11 @@ export default function Cart() {
   };
 
   const checkoutHanbler = () => {
-    navigate('/signin?/redirect=/sign');
+    if (userInfo) {
+      navigate('/shipping');
+    } else {
+      navigate('/signin?/redirect=/sign');
+    }
   };
 
   return (

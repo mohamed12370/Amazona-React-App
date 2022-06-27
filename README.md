@@ -82,3 +82,7 @@
     28-1. handle submit action
     28-2. save token in store and local stroge
     28-3. show user name in header
+29. create shipping screen
+    29-1. create form inputs
+    29-2. handle save shipping address
+    29-3. add checkout wizard bar
