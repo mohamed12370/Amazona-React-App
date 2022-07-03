@@ -21,7 +21,7 @@ export default function Cart() {
   const navigate = useNavigate();
 
   const updateCartHandler = async (item, quantity) => {
-    const { data } = await axios.get(`/api/prodects/${item._id}`);
+    const { data } = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {
       window.alert('sorry. product is out of stock');
       return;
