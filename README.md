@@ -86,3 +86,10 @@
     29-1. create form inputs
     29-2. handle save shipping address
     29-3. add checkout wizard bar
+30. create sign up screen
+    30-1. create inputs forms
+    30-2. handle submit
+    30-3. create backend api
+31. Implement Select Payment Method Screen
+    31-1. create input forms
+    31-2. handle submit

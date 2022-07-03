@@ -46,7 +46,7 @@ export default function Shipping() {
         country,
       })
     );
-    navigate('/payment');
+    navigate('/paymentMethod');
   };
 
   useEffect(() => {
