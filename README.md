@@ -104,3 +104,13 @@
     34-1. create backend api for order/:id
     34-2. fetch order api in frontend
     34-3. show order infomation in 2 columns
+35. pay order py paypal
+    35-1. generate paypal clinet id
+    35-2. create api to return client id
+    35-3. install react-paypal-js
+    35-4. use paypalScriptProvider in index.js
+    35-5. use usePayPalScriptProvider in order screen
+    35-6. implement loadPayPalScript function
+    36-7. render paypal button
+    36-8. implement onApprove payment function
+    36-9. create pay order api in backend
