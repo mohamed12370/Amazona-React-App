@@ -100,3 +100,7 @@
 33. impelement place order action
     33-1. handle place order action
     33-2. create order , create api
+34. create order screen
+    34-1. create backend api for order/:id
+    34-2. fetch order api in frontend
+    34-3. show order infomation in 2 columns
