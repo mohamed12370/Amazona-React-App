@@ -26,7 +26,7 @@ const reducer = (state, action) => {
 };
 
 export default function Home() {
-  const [{ loding, error, prodects }, dispatch] = useReducer(logger(reducer), {
+  const [{ loding, error, prodects }, dispatch] = useReducer(reducer, {
     prodects: [],
     loding: true,
     error: '',

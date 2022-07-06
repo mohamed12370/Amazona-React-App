@@ -131,3 +131,6 @@
     38-5. create mongodb atlas database
     38-6. set database connection in herkou env variables
     38-7. commit and push
+39. add sidebar and search box
+    39-1. add sidebar
+    39-2. add search box
