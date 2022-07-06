@@ -118,3 +118,8 @@
     36-1. create order screen
     36-2. create order history api
     36-3. use api in frontend
+37. create profail screen
+    37-1. get user info from context
+    37-2. show user info
+    37-3. create user update api
+    37-4. update user info

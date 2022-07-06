@@ -11,6 +11,7 @@ import Payment from './Components/Payment/Payment';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import Order from './Components/Order/Order';
 import OrderHistory from './Components/OrderHistory/OrderHistory';
+import Profile from './Components/Profile/Profile';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/paymentMethod" element={<Payment />} />
             <Route path="/placeorder" element={<PlaceOrder />} />
             <Route path="/order/:id" element={<Order />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/orderhistory" element={<OrderHistory />} />
             <Route path="/prodect/:slug" element={<Prodect />} />
           </Routes>
