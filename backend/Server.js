@@ -1,5 +1,5 @@
 import express from 'express';
-import data from './data.js';
+import path from 'path';
 import dotenv from 'dotenv';
 import { connectDB } from './DB/connect.js';
 import seedRouter from './routes/seedRoute.js';
@@ -23,6 +23,12 @@ app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
+
+const _dirname = path.resolve();
+app.use(express.static(path.join(_dirname, '/frontend/build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(_dirname, '/frontend/build/index.html'));
+});
 
 app.use((err, req, res, next) => {
     res.status(500).send({ message: err.message });

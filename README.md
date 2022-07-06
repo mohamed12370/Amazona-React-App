@@ -123,3 +123,11 @@
     37-2. show user info
     37-3. create user update api
     37-4. update user info
+38. publish to heroku
+    38-1. create and config node project
+    38-2. serve build folder forntend folder
+    38-3. create heroku account
+    38-4. connect it to github
+    38-5. create mongodb atlas database
+    38-6. set database connection in herkou env variables
+    38-7. commit and push
